@@ -1,0 +1,34 @@
+<div class="container">
+    <h2> {{title}} </h2>
+    <p>add brand</p>
+
+    <div class="row">
+        <input type="text" [(ngModel)]="my_brand" (keyup.enter)="show_word()" >
+        <button class="btn btn-primary mr-2"
+                (click)="getBrand()" 
+        >get Marca
+        </button>
+
+        <button class="btn btn-success mr-2"
+                (click)="addBrands()"
+                >Add Brand
+        </button>
+    </div>
+
+    <strong> {{my_brand}} </strong>
+
+    <p>buy the best brand shoes</p>
+    
+    <ul>
+        <li *ngFor="let brand of brands; let index = index" >
+            {{index + " " + brand}}
+            <button class="btn btn-danger" (click)="removebrand(index)" >Delete</button>
+        </li>
+    </ul>
+    
+    <p>The shoes that we have available are the following</p>
+
+    <input type="button" (click)="getText()" value="enter the server">
+    
+
+</div>
